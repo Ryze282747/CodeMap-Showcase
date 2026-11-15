@@ -5,6 +5,34 @@ All notable changes to CodeMap will be documented in this file.
 
 This project follows [Semantic Versioning](https://semver.org/).
 
+## [1.1.0] - 2026-11-15
+
+### Added
+
+### Python Dependency Support
+
+- Python project-local import resolution.
+- Python standard-library module recognition.
+- Automatic third-party dependency recognition through supported dependency manifests.
+- Support for "requirements.txt", "pyproject.toml", "Pipfile", "Pipfile.lock", and "setup.cfg".
+- Manual registration of third-party Python modules through CodeMap Settings.
+- Ability to add and remove registered Python external modules.
+- Automatic recognition of registered external modules during dependency analysis.
+- Python import classification into internal, external, standard-library, and unresolved dependencies.
+
+### Settings and Configuration
+
+- Persistent storage for manually registered Python external modules.
+- Empty-by-default Python external module registration list.
+- Apply and rescan functionality for Python external module settings.
+- Synchronization of Python external module settings with the import resolver.
+
+### Improved
+
+- Python dependency resolution through configurable external module recognition.
+- Settings management for Python dependency analysis.
+- Workspace rescanning when Python external module settings are updated.
+
 ## [1.0.0] - 2026-11-14
 
 ### Added

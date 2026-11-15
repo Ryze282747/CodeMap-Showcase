@@ -7,7 +7,7 @@
 
 Understand your codebase. Explore dependencies. Analyze architecture. Track structural changes.
 
-[![Version](https://img.shields.io/badge/version-1.0.0-6366f1?style=for-the-badge)](https://github.com/Ryze282747/CodeMap-Showcase)
+[![Version](https://img.shields.io/badge/version-1.1.0-6366f1?style=for-the-badge)](https://github.com/Ryze282747/CodeMap-Showcase)
 [![Platform](https://img.shields.io/badge/platform-Acode-22c55e?style=for-the-badge)](https://acode.app/)
 [![License](https://img.shields.io/badge/license-Proprietary-f59e0b?style=for-the-badge)](LICENSE)
 
@@ -112,6 +112,40 @@ Understand relationships between modules and files.
 - Explore dependency paths.
 - Inspect dependency relationships.
 - Configure graph node limits.
+- Resolve Python project-local imports.
+- Detect Python standard-library modules.
+- Automatically recognize third-party Python dependencies declared in supported dependency manifests.
+- Support manual registration of third-party Python modules that are not declared in dependency manifests.
+- Distinguish internal, external, standard-library, and unresolved Python imports.
+
+#### Python Dependency Management
+
+CodeMap provides additional dependency recognition capabilities for Python projects.
+
+#### Automatic Dependency Detection
+
+CodeMap scans supported Python dependency manifests:
+
+- `requirements.txt`
+- `pyproject.toml`
+- `Pipfile`
+- `Pipfile.lock`
+- `setup.cfg`
+
+Declared third-party dependencies are automatically recognized during dependency analysis.
+
+#### Manual External Module Registration
+
+For Python modules that are not declared in supported dependency manifests, users can register them manually through CodeMap Settings.
+
+- Add third-party module names.
+- Remove previously registered modules.
+- Apply changes and rescan the workspace.
+- Preserve registered modules across plugin restarts.
+
+The manually registered module list is empty by default. Users decide which external modules they want CodeMap to recognize.
+
+Python standard-library recognition and project-local import resolution operate independently of manual external module registration.
 
 ### 4. Dependency Graph Visualization
 
@@ -140,6 +174,7 @@ CodeMap includes several architecture analysis tools:
 - **Dependency Stability Analysis** – evaluate dependency stability.
 - **Dependency Bottleneck Analysis** – identify important dependency bottlenecks.
 - **Impact Analysis** – investigate potential effects of changes across the project.
+- **Python Architecture Support** – analyze Python project structures and dependency relationships alongside supported JavaScript and TypeScript projects.
 
 ### 6. Codebase Health Analysis
 
@@ -182,19 +217,28 @@ Configure CodeMap according to your project.
 - Configure dependency graph display limits.
 - View dependency node statistics.
 - Monitor indexed project information.
-
----
+- Manage manually registered Python external modules.
+- Add and remove third-party Python module names.
+- Apply Python external module settings and rescan the workspace.
+- Persist Python external module registrations across plugin restarts.
 
 ## Supported Languages
 
-CodeMap currently includes parser support for:
+CodeMap currently includes parser and analysis support for:
 
 - JavaScript
 - TypeScript
+- Python
+
+Python support includes:
+
+- Project-local import resolution.
+- Standard-library module recognition.
+- Third-party dependency detection through supported dependency manifests.
+- Manual registration of external Python modules.
+- Python dependency classification.
 
 Import resolution and analysis capabilities depend on the supported parser and resolver implementations.
-
-Additional language support may be introduced in future updates.
 
 ## Installation
 
